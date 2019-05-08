@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public int winCondition;
+    public int jump;
     public Text countText;
     public Text winText;
 
@@ -32,8 +33,8 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
         if (Input.GetKeyDown("space"))
         {
-            Vector3 jump = new Vector3(0.0f, 200.0f, 0.0f);
-            GetComponent<Rigidbody>().AddForce(jump);
+            Vector3 up = new Vector3(0.0f, 200.0f, 0.0f);
+            GetComponent<Rigidbody>().AddForce(up * jump);
         }
     }
 
