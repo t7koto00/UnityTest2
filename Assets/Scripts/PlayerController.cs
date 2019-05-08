@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public int winCondition;
     public Text countText;
     public Text winText;
 
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count++;
             countText.text = "Pisteet: " + count.ToString();
-            if (count > 4)
+            if (count >= winCondition)
             {
                 winText.text = "VOITIT PELIN";
             }
