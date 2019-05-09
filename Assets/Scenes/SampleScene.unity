@@ -998,8 +998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46fe76af739c9545acc27aaf7c916e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 25
   winCondition: 6
+  jump: 1
   countText: {fileID: 1581537333}
   winText: {fileID: 1342044094}
 --- !u!96 &508688045
