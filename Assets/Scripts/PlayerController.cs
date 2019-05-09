@@ -11,6 +11,8 @@ public class PlayerController : NetworkBehaviour
     public int jump;
     public Text countText;
     public Text winText;
+    public GameObject myCam;
+
 
     private Rigidbody rb;
  
@@ -24,6 +26,7 @@ public class PlayerController : NetworkBehaviour
         count = 0;
         countText.text = "Pisteet: " + count.ToString();
         winText.text = "";
+
     }
 
     void FixedUpdate()
