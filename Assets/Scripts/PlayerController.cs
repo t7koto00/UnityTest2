@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     public float speed;
     public int winCondition;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Text winText;
 
     private Rigidbody rb;
+ 
     private int count;
 
 
@@ -28,6 +30,12 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+
+        if (!isLocalPlayer)
+        {
+            // exit from update if this is not the local player
+            return;
+        }
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement * speed);
